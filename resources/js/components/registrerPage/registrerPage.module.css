@@ -1,0 +1,278 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body > #root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor de página completa */
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+/* Contenedor para centrar el main verticalmente */
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px 0; 
+}
+
+/* Main container */
+.main {
+  max-width: 900px;
+  width: 100%;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+
+footer {
+  flex-shrink: 0; /* Evita que el footer se encoja */
+}
+
+.h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Success message container */
+.successContainer {
+  border: 1px solid #e5e5e5;
+  padding: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.successTitle {
+  font-size: 22px;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.successMessage {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.successNote {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.resendButton {
+  background-color: #5c636a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px 0;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.resendButton:hover {
+  background-color: #495057;
+}
+
+.loginButton {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  margin: 20px 0;
+  transition: background-color 0.3s;
+}
+
+.loginButton:hover {
+  background-color: #555;
+  text-decoration: none;
+}
+
+.loginLink {
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+/* Server error */
+.serverError {
+  background-color: #ffebee;
+  color: #e41e3f;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ffcdd2;
+}
+
+/* Formulario */
+.form {
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formRow {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.formGroup {
+  flex: 1;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.error {
+  color: #e41e3f;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+.button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.notice {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.notice p {
+  margin-bottom: 10px;
+}
+
+.link {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 20px;
+  }
+
+  .h1 {
+    font-size: 24px;
+  }
+
+  .form {
+    padding: 15px;
+  }
+  
+  .successContainer {
+    padding: 20px;
+  }
+  
+  .loginButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    padding: 15px;
+  }
+
+  .h1 {
+    font-size: 20px;
+  }
+
+  .formRow {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .loginButton {
+    width: 80%;
+    padding: 10px;
+  }
+
+  .notice {
+    font-size: 13px;
+  }
+  
+  .successContainer {
+    padding: 15px;
+  }
+  
+  .successTitle {
+    font-size: 18px;
+  }
+}

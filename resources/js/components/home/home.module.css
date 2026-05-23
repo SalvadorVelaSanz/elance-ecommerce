@@ -1,0 +1,323 @@
+/* CSS COMPLETO - HOME.MODULE.CSS MEJORADO */
+
+/* Sección banner principal */
+.sectionBanner {
+    background-image: url('banner-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 31.25rem;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+  }
+  
+  .bannerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+  
+  .bannerText {
+    flex: 1;
+    max-width: 31.25rem;
+  }
+  
+  .bannerText h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    margin-bottom: 0.625rem;
+    color: #333;
+  }
+  
+
+  .bannerText h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 1.875rem;
+    letter-spacing: -0.0625rem;
+    color: #333;
+  }
+  
+  .bannerText button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .bannerText button:hover {
+    background-color: #333;
+  }
+  
+  .bannerImage {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bannerImage img {
+    max-width: 100%;
+    max-height: 28rem;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Estilos para carga y error */
+  .loadingContainer,
+  .errorContainer {
+    padding: 3.75rem 5%;
+    text-align: center;
+  }
+  
+  .errorContainer button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .errorContainer button:hover {
+    background-color: #333;
+  }
+  
+  /* Sección destacados y más vendidos */
+  .sectionDestacados, .sectionMasVendidos {
+    padding: 3.75rem 5%;
+  }
+  
+  .sectionDestacados h2, .sectionMasVendidos h2 {
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.875rem;
+    text-transform: uppercase;
+  }
+  
+  /* Contenedores de tarjetas (destacados y más vendidos) */
+  .containerDestacados, .containerMasVendidos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1.25rem;
+  }
+  
+  /* Sección categorías */
+  .sectionCategorias {
+    padding: 3.75rem 5%;
+    background-color: #f9f9f9;
+  }
+  
+  /* Contenedor de categorías */
+  .containerCategorias {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  
+  .cardCategorias {
+    width: 20rem; 
+    height: 30.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 8px;
+    flex-shrink: 0; 
+  }
+  
+  /* Estilos para la imagen de la categoría - DESKTOP  */
+  .categoriaImagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .cardCategorias:hover .categoriaImagen {
+    transform: scale(1.05);
+  }
+  
+  /* Placeholder para cuando no hay imagen */
+  .imagenPlaceholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    background-image: linear-gradient(45deg, #d0d0d0 25%, transparent 25%, transparent 75%, #d0d0d0 75%, #d0d0d0),
+                      linear-gradient(45deg, #d0d0d0 25%, transparent 25%, transparent 75%, #d0d0d0 75%, #d0d0d0);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
+  
+  .cardCategorias p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.625rem 1.25rem;
+    border-radius: 4px;
+    z-index: 1;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Sección ofertas */
+  .sectionOfertas {
+    padding: 3.75rem 5%;
+    background-color: #f5f5f5;
+  }
+  
+  .sectionOfertas > div {
+    max-width: 50rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 2.5rem;
+  }
+  
+  .sectionOfertas h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.625rem;
+    text-transform: uppercase;
+  }
+  
+  .sectionOfertas p {
+    font-size: 1rem;
+  }
+  
+  .sectionOfertas button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+  }
+  
+  .sectionOfertas button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Sección marcas */
+  .marcas {
+    padding: 3.75rem 5%;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Media queries para responsive */
+  @media (max-width: 48rem) {
+    .bannerContent {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .bannerText {
+      margin-bottom: 1.25rem;
+    }
+    
+    .containerCategorias {
+      flex-direction: column;
+      gap: 1rem;
+      max-width: none;
+    }
+    
+    .cardCategorias {
+      height: 18rem; 
+      min-height: 18rem;
+      width: 100%;
+      margin-bottom: 0;
+    }
+    
+    
+    .categoriaImagen {
+      object-fit: cover; 
+      object-position: center center; 
+    }
+    
+    .cardCategorias p {
+      font-size: 1.4rem; 
+      padding: 0.8rem 1.2rem;
+      background-color: rgba(0, 0, 0, 0.8); 
+    }
+    
+    .sectionOfertas > div {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .sectionOfertas button {
+      margin-top: 1.25rem;
+    }
+  }
+
+  /* Para pantallas muy pequeñas */
+  @media (max-width: 30rem) {
+    .cardCategorias {
+      height: 15rem; 
+      min-height: 15rem;
+    }
+    
+    .cardCategorias p {
+      font-size: 1.2rem;
+      padding: 0.6rem 1rem;
+    }
+  }
+  
+  /* Media query adicional para tablets */
+  @media (max-width: 64rem) and (min-width: 48.1rem) {
+    .containerCategorias {
+      gap: 1.5rem;
+      max-width: 50rem;
+    }
+    
+    .cardCategorias {
+      width: 14rem; 
+      height: 22rem; 
+    }
+    
+    
+    .categoriaImagen {
+      object-fit: cover;
+      object-position: center center;
+    }
+    
+    .cardCategorias p {
+      font-size: 1.3rem;
+    }
+  }

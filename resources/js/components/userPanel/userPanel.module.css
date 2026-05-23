@@ -1,0 +1,584 @@
+/* ============================================================
+   userPanel.module.css
+   Estilos exclusivos del panel de usuario.
+   Los estilos comunes con adminPanel están en panelShared.module.css
+   ============================================================ */
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #e74c3c;
+    background-color: #fdf2f2;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+/* Botones (versión user — con margin-top y transition en base) */
+.btnGuardar,
+.btnEditar,
+.btnEliminar,
+.btnNuevaDireccion,
+.submitButton,
+.btnPrimary {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btnGuardar:hover,
+.btnNuevaDireccion:hover,
+.submitButton:hover,
+.btnPrimary:hover {
+    background-color: #555;
+}
+
+.btnCancelar {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 10px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.btnCancelar:hover {
+    background-color: #ccc;
+}
+
+.btnEditar {
+    background-color: #4a90e2;
+    margin-right: 10px;
+    margin-top: 0;
+}
+
+.btnEditar:hover {
+    background-color: #3a7bc8;
+}
+
+.btnEliminar {
+    background-color: #e74c3c;
+    margin-top: 0;
+}
+
+.btnEliminar:hover {
+    background-color: #c0392b;
+}
+
+.btnEliminar:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btnSetPrimary {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin-right: 10px;
+    margin-top: 0;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btnSetPrimary:hover {
+    background-color: #3a7bc8;
+}
+
+.btnSetPrimary:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btnResend {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.btnResend:hover {
+    background-color: #555;
+}
+
+.btnResend:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.buttonLink {
+    background: none;
+    border: none;
+    color: #4a90e2;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.buttonLink:hover {
+    color: #3a7bc8;
+}
+
+/* Estado vacío */
+.emptyState {
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+.emptyState p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Direcciones */
+.direccionesLista {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.direccionCard {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.direccionCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-color: #d0d7de;
+}
+
+.direccionPrincipal {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+    border: 1px solid #2196f3;
+    box-shadow: 0 3px 12px rgba(33, 150, 243, 0.15);
+    transform: none;
+    order: -1;
+}
+
+.direccionPrincipal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(33, 150, 243, 0.2);
+}
+
+.principalIndicator {
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+    padding: 6px 16px;
+    margin: -20px -20px 15px -20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.principalIcon {
+    font-size: 14px;
+    color: #ffd700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.principalText {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+
+.direccionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.direccionHeader h3 {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.direccionCard .direccionHeader h3 .direccion-nombre {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.direccionPrincipal .direccionHeader h3 {
+    color: #1565c0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.direccionCard .direccionHeader h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.direccionActions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Badge principal (solo userPanel) */
+.badgePrincipal,
+.badgeStatus,
+.badgePrimary,
+.badgeSuccess,
+.badgeInfo,
+.badgeWarning,
+.badgeDanger {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+.direccionPrincipal .badgePrincipal {
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    box-shadow: 0 1px 3px rgba(33, 150, 243, 0.3);
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.direccionCard p {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.direccionPrincipal .direccionContent p {
+    color: #424242;
+    font-weight: 400;
+}
+
+.direccionPrincipal .direccionContent p strong {
+    color: #1565c0;
+    font-weight: 600;
+}
+
+.direccionCard .direccionContent p {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.direccionCard .direccionContent p strong {
+    color: #333;
+    font-weight: 500;
+}
+
+.formDireccion {
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.formDireccion h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.formCheck {
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.formCheck input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.formCheck label {
+    display: inline;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+/* Pedidos del usuario */
+.orderItemsList {
+    margin-bottom: 20px;
+}
+
+.orderItemsList h4,
+.orderAddress h4,
+.orderTracking h4,
+.orderPayment h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.orderItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.orderItem:last-child {
+    border-bottom: none;
+}
+
+.orderAddress,
+.orderTracking,
+.orderPayment {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Favoritos */
+.favoriteProductCard {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.productImagePlaceholder {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.productInfo {
+    flex: 1;
+}
+
+/* Verificación de email */
+.emailContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.verificationStatus {
+    display: inline-block;
+    font-size: 12px;
+    background-color: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-width: 120px;
+}
+
+.statusVerificado {
+    color: #333;
+    border-color: #333;
+    background-color: transparent;
+}
+
+/* Responsive user */
+@media (max-width: 768px) {
+    .direccionCard,
+    .direccionPrincipal {
+        margin-bottom: 12px;
+        padding: 16px;
+    }
+
+    .principalIndicator {
+        margin: -16px -16px 12px -16px;
+        padding: 8px 16px;
+    }
+
+    .principalIcon {
+        font-size: 12px;
+    }
+
+    .principalText {
+        font-size: 9px;
+    }
+
+    .direccionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .direccionActions {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .favoriteProductCard {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .productImagePlaceholder {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+    .direccionHeader h3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .emailContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .verificationStatus {
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    .direccionTitleContainer {
+        gap: 6px;
+        width: 100%;
+    }
+
+    .direccionCard .direccionHeader h3 {
+        font-size: 15px;
+    }
+
+    .direccionPrincipal .badgePrincipal {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btnGuardar,
+    .btnEditar,
+    .btnEliminar,
+    .btnNuevaDireccion,
+    .btnCancelar,
+    .submitButton,
+    .btnResend {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .badgePrincipal,
+    .badgeStatus,
+    .badgePrimary,
+    .badgeSuccess,
+    .badgeInfo,
+    .badgeWarning,
+    .badgeDanger {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    .orderItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .addressHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .addressHeader strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .verificationStatus {
+        width: 100%;
+    }
+
+    .direccionCard,
+    .direccionPrincipal {
+        padding: 14px;
+    }
+
+    .principalIndicator {
+        margin: -14px -14px 10px -14px;
+        padding: 6px 12px;
+        justify-content: center;
+    }
+
+    .direccionTitleContainer {
+        gap: 4px;
+    }
+
+    .direccionCard .direccionHeader h3 {
+        font-size: 14px;
+    }
+
+    .direccionPrincipal .badgePrincipal {
+        font-size: 8px;
+        padding: 1px 5px;
+        border-radius: 8px;
+    }
+}

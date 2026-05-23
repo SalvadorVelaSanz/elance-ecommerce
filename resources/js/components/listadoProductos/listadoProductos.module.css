@@ -1,0 +1,327 @@
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .shopSection {
+    display: flex;
+    gap: 30px;
+  }
+  
+  /* Encabezado de tienda */
+  .shopHeader {
+    margin-bottom: 30px;
+  }
+  
+  .shopHeader h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+  .shopHeader p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* estilos de sidebar */
+  .sidebar {
+    width: 250px;
+    flex-shrink: 0;
+  }
+  
+  .filterSection {
+    margin-bottom: 30px;
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+  }
+  
+  .filterHeading {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .searchForm {
+    margin-bottom: 20px;
+  }
+  
+  .searchForm input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .searchButton {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .searchButton:hover {
+    background-color: #555;
+  }
+  
+  .categoriesList {
+    list-style: none;
+  }
+  
+  .categoriesList li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .categoriesList a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .categoriesList a:hover {
+    color: #777;
+  }
+  
+  .categoryCount {
+    color: #777;
+    font-size: 14px;
+  }
+  
+  
+  .productsContainer {
+    flex: 1;
+  }
+  
+  .gridProductos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Estilos de tarjetas de productos */
+  .cardProducto {
+    flex: 0 0 calc(33.333% - 20px);
+    position: relative;
+    margin-bottom: 1.875rem;
+    min-width: 15rem;
+  }
+  
+  .cardProducto img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    background-color: #f5f5f5;
+    margin-bottom: 0.9375rem;
+  }
+  
+  .cardProducto h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.3125rem;
+    text-transform: uppercase;
+  }
+  
+  .cardProducto p:nth-of-type(1) {
+    font-size: 0.875rem;
+    color: #777;
+    margin-bottom: 0.3125rem;
+    text-transform: uppercase;
+  }
+  
+  .cardProducto p:nth-of-type(2) {
+    font-size: 1rem;
+    font-weight: 700;
+    display: inline-block;
+  }
+  
+  .precioAccion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.625rem;
+  }
+  
+  .cardProducto button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 0.625rem;
+    vertical-align: middle;
+    transition: background-color 0.3s;
+  }
+  
+  .cardProducto button:hover {
+    background-color: #333;
+  }
+  
+  /* Corazón de favoritos */
+  .cardProducto::before {
+    content: "♡";
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .cardProducto:hover::before {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #ff3366;
+  }
+  
+  /* Etiqueta de descuento*/
+  .saleBadge {
+    position: absolute;
+    top: 0.625rem;
+    right: 3.75rem; 
+    background-color: #000;
+    color: #fff;
+    padding: 0.3125rem 0.625rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  
+  .precioDescuento {
+    text-decoration: line-through;
+    color: #777;
+    margin-right: 5px;
+    font-weight: normal;
+  }
+
+  /* Estilos de paginación */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 8px;
+  }
+
+  .pageButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .pageButton:hover {
+    background-color: #f5f5f5;
+  }
+
+  .pageButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .activePage {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+  }
+
+  .activePage:hover {
+    background-color: #444;
+  }
+
+  .ellipsis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .productsLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .productsLoading p {
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+  }
+  /* Media queries para responsive */
+  @media screen and (max-width: 992px) {
+    .shopSection {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .gridProductos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .cardProducto {
+      flex: 0 0 calc(50% - 15px);
+      min-width: auto;
+    }
+    
+    .cardProducto img {
+      height: 12rem;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .gridProductos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .cardProducto {
+      flex: 0 0 100%;
+      min-width: auto;
+    }
+    
+    .cardProducto img {
+      height: 10rem;
+    }
+  }

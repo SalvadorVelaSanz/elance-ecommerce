@@ -1,0 +1,181 @@
+.mapSection {
+  width: 100%;
+  height: 400px;
+  background-color: #e9f5ec;
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos específicos para el mapa de Leaflet */
+.mapContainer {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 18px;
+}
+
+/* Sección de contacto */
+.contactSection {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.contactForm {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.addressInfo {
+  flex: 1;
+  padding-left: 40px;
+}
+
+/* Encabezados y subtítulos */
+.contactHeading {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: #333;
+  position: relative;
+}
+
+.contactHeading:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: #333;
+  margin-top: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-top: -25px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+/* Formulario */
+.contactForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactForm label {
+  display: none;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 14px;
+}
+
+.contactForm textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contactForm input[type="submit"] {
+  background-color: #000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+  width: auto;
+  align-self: flex-end;
+}
+
+.contactForm input[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* Mensajes de estado */
+.statusMessage {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Información de contacto */
+.address {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.contactDetails {
+  margin-bottom: 30px;
+}
+
+/* Íconos sociales */
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.socialIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.socialIcon:hover {
+  background-color: #ddd;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .contactSection {
+    flex-direction: column;
+  }
+
+  .contactForm, 
+  .addressInfo {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,391 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body > #root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor de página completa */
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+/* Contenedor para centrar el main verticalmente */
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px 0; 
+}
+
+/* Main container */
+.main {
+  max-width: 900px;
+  width: 100%;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+
+}
+
+
+footer {
+  flex-shrink: 0; /* Evita que el footer se encoja */
+}
+
+
+/* Headings */
+.h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+
+.loginSection {
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.loginTitle {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.errorMessage {
+  color: #e41e3f;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+}
+
+.inputGroup.hasError .errorMessage {
+  display: block;
+}
+
+.inputGroup.hasError .input {
+  border-color: #e41e3f;
+}
+
+.button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block;
+  width: auto;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.formFooter {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.link {
+  color: #333;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+
+.serverError {
+  background-color: #ffebee;
+  color: #e41e3f;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ffcdd2;
+}
+
+/*mensaje de éxito */
+.successMessage {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 1px solid #c8e6c9;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.successIcon {
+  margin: 0 auto 15px;
+  color: #2e7d32;
+  display: flex;
+  justify-content: center;
+}
+
+.successText {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor de acciones  */
+.actionsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Botón de acción principal */
+.primaryAction {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  min-width: 200px;
+  transition: background-color 0.2s ease;
+}
+
+.primaryAction:hover {
+  background-color: #555;
+}
+
+/* Botón de acción secundaria */
+.secondaryAction {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.secondaryAction:hover {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+
+.secondaryAction:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Icono de refrescar */
+.refreshIcon {
+  margin-right: 5px;
+}
+
+/* Spinner de carga */
+.loadingSpinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #333;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loginLink {
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+.resendContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.resendButton {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s ease;
+}
+
+.resendButton:hover {
+  background-color: #e0e0e0;
+}
+
+.resendButton:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.suspendedMessage {
+    background-color: #ffe0e0;
+    border-color: #ff9999;
+}
+
+.suspendedNote {
+    font-weight: bold;
+    color: #cc0000;
+}
+
+/* inputs desabilitados para cuentas suspendidas */
+.input:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.button:disabled:hover {
+    background-color: #ccc;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .h1 {
+    font-size: 24px;
+  }
+
+  .h2 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .actionsContainer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .primaryAction, .secondaryAction {
+    min-width: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .main {
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .loginSection {
+    padding: 15px;
+  }
+
+  .h1 {
+    font-size: 20px;
+  }
+
+  .h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .loginTitle {
+    font-size: 16px;
+  }
+
+  .input {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .formFooter {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .formFooter .link {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}

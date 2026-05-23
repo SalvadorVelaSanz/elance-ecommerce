@@ -1,0 +1,34 @@
+.footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 3.75rem 5%;
+  }
+  
+  .footer > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .footer h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: #fff;
+  }
+  
+  .footer p, .footer a {
+    display: block;
+    margin-bottom: 0.625rem;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer a:hover {
+    color: #fff;
+  }
+  
+  .footer a span {
+    margin-right: 0.625rem;
+  }
