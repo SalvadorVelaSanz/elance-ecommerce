@@ -14,12 +14,15 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        // Forzar HTTPS para todas las URLs generadas por Laravel
+        // Forzar siempre APP_URL como base para la generación de URLs firmadas.
+        // Necesario cuando las peticiones llegan a través del proxy de Vite,
+        // ya que el header Host puede ser el del frontend (ej: [::1]:5173)
+        // en lugar del backend real, lo que rompería las firmas de verificación de email.
+        URL::forceRootUrl(config('app.url'));
+
+        // Forzar HTTPS en producción
         if (config('app.env') === 'production' || env('FORCE_HTTPS')) {
             URL::forceScheme('https');
-            URL::forceRootUrl(env('APP_URL')); // Esta línea es clave
-            
-            // También forzar para URLs firmadas
             $this->app['request']->server->set('HTTPS', 'on');
         }
     }

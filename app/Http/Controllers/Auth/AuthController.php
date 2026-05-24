@@ -128,21 +128,47 @@ class AuthController extends Controller
     }
 
     // Método para verificar email (recibe solicitud directa)
-    
+
     public function verifyEmail(Request $request, $id, $hash)
     {
-        // Verificar si la firma es válida
-        if (!$request->hasValidSignature()) {
-            // Si la firma no es válida, devolver un error
+        $expires   = $request->query('expires');
+        $signature = $request->query('signature');
+
+        // Verificar que los parámetros necesarios existen
+        if (!$expires || !$signature) {
+            return response()->json([
+                'message' => 'Parámetros de verificación inválidos'
+            ], 403);
+        }
+
+        // Verificar que el enlace no ha expirado
+        if (time() > (int) $expires) {
+            return response()->json([
+                'message' => 'El enlace de verificación ha expirado'
+            ], 403);
+        }
+
+        // Regenerar la URL firmada con los mismos parámetros usando el generador de Laravel.
+        // Gracias a URL::forceRootUrl() en AppServiceProvider, esto siempre usará APP_URL
+        // sin importar el host de la petición entrante.
+        $resignedUrl = \Illuminate\Support\Facades\URL::temporarySignedRoute(
+            'verification.verify',
+            \Carbon\Carbon::createFromTimestamp((int) $expires),
+            ['id' => (int) $id, 'hash' => $hash]
+        );
+        $resignedParsed = [];
+        parse_str(parse_url($resignedUrl, PHP_URL_QUERY), $resignedParsed);
+        $expectedSignature = $resignedParsed['signature'] ?? '';
+
+        if (!hash_equals($expectedSignature, (string) $signature)) {
             return response()->json([
                 'message' => 'URL de verificación inválida o expirada'
             ], 403);
         }
-        
-        // Buscar al usuario por ID
 
+        // Buscar al usuario por ID
         $user = User::findOrFail($id);
-        
+
         // Verificar si el usuario ya ha verificado su correo electrónico
         if ($user->hasVerifiedEmail()) {
             return response()->json([
@@ -151,18 +177,17 @@ class AuthController extends Controller
         }
 
         // Verificar si el hash coincide con el correo electrónico del usuario
-        if (sha1($user->getEmailForVerification()) === $hash) {
-            $user->markEmailAsVerified();
-            
+        if (sha1($user->getEmailForVerification()) !== $hash) {
             return response()->json([
-                'message' => 'Email verificado correctamente'
-            ]);
+                'message' => 'Verificación fallida'
+            ], 403);
         }
-        
-        // Si el hash no coincide, devolver un error
+
+        $user->markEmailAsVerified();
+
         return response()->json([
-            'message' => 'Verificación fallida'
-        ], 403);
+            'message' => 'Email verificado correctamente'
+        ]);
     }
     
     // Método para reenviar correo de verificación
